@@ -1,0 +1,32 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(8)
+}
+
+application {
+    mainClassName = 'MainKt'
+}
